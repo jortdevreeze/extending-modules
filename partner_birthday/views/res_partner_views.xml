@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Add date of birth field to the partner form view -->
+    <record id="view_partner_form_inherit_birthday" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit.birthday</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <!-- Add date of birth field below email field -->
+            <xpath expr="//field[@name='email']" position="after">
+                <field name="date_of_birth"/>
+                <field name="age" readonly="1"/>
+            </xpath>
+        </field>
+    </record>
+    
+    <!-- Add date of birth filter to the partner search view -->
+    <record id="view_res_partner_filter_inherit_birthday" model="ir.ui.view">
+        <field name="name">res.partner.filter.inherit.birthday</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='inactive']" position="after">
+                <filter string="Has Birthday" name="has_birthday" domain="[('date_of_birth', '!=', False)]"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
