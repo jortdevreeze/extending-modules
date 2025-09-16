@@ -42,8 +42,8 @@ class ResPartner(models.Model):
         partners = self.search(domain)
         
         for partner in partners:
-            dob = partner.date_of_birth
-            if dob.day == today.day and dob.month == today.month:
+            date_of_birth = partner.date_of_birth
+            if date_of_birth.day == today.day and date_of_birth.month == today.month:
                 # It's this partner's birthday!
                 salesperson = partner.user_id
                 age = partner.age

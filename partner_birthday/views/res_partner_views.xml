@@ -6,7 +6,6 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
-            <!-- Add date of birth field below email field -->
             <xpath expr="//field[@name='email']" position="after">
                 <field name="date_of_birth"/>
                 <field name="age" readonly="1"/>
