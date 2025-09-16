@@ -21,7 +21,7 @@ class ResPartner(models.Model):
                 age = today.year - born.year - ((today.month, today.day) < (born.month, born.day))
                 partner.age = age
             else:
-                partner.age = 0
+                partner.age = None
     
     @api.constrains('date_of_birth')
     def _check_date_of_birth(self):

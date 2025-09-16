@@ -10,7 +10,7 @@
     'author': 'Jort de Vreeze',
     'website': 'https://www.example.com',
     'category': 'CRM',
-    'depends': ['base', 'mail'],
+    'depends': ['base', 'mail', 'contacts'],
     'data': [
         'security/ir.model.access.csv',
         'views/res_partner_views.xml',

@@ -33,3 +33,4 @@ After installation, you'll see a new "Date of Birth" field in partner forms. Whe
 
 - base
 - mail
+- contacts
